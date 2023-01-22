@@ -78,9 +78,9 @@ function renderWhiteSauce() {
 function renderGlutenFreeCrust() {
   document.querySelectorAll('.crust').forEach((oneGlutenFreeSauce) => {
     if (state.glutenFreeCrust) {
-      oneGlutenFreeSauce.style.visibility = 'visible';
-    } else {
       oneGlutenFreeSauce.style.visibility = 'hidden';
+    } else {
+      oneGlutenFreeSauce.style.visibility = 'visible';
     }
   });
   // Iteration 2: add/remove the class "crust-gluten-free" of `<section class="crust">`
