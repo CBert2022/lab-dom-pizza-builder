@@ -1,5 +1,3 @@
-// Write your Pizza Builder JavaScript in this file.
-
 // Constants
 const basePrice = 10;
 const ingredients = {
@@ -10,16 +8,16 @@ const ingredients = {
   glutenFreeCrust: { name: 'Gluten-free crust', price: 5 }
 };
 
-// Initial value of the state (the state values can change over time)
+// Initial value of the state
 const state = {
-  pepperoni: true,
-  mushrooms: true,
-  greenPeppers: true,
+  pepperoni: false,
+  mushrooms: false,
+  greenPeppers: false,
   whiteSauce: false,
-  glutenFreeCrust: false
+  glutenFreeCrust: true
 };
 
-// This function takes care of rendering the pizza based on the state
+// Rendering the pizza based on the state
 // This function is triggered once at the beginning and every time the state is changed
 function renderEverything() {
   renderPepperoni();
@@ -78,9 +76,9 @@ function renderWhiteSauce() {
 function renderGlutenFreeCrust() {
   document.querySelectorAll('.crust').forEach((oneGlutenFreeSauce) => {
     if (state.glutenFreeCrust) {
-      oneGlutenFreeSauce.style.visibility = 'hidden';
-    } else {
       oneGlutenFreeSauce.style.visibility = 'visible';
+    } else {
+      oneGlutenFreeSauce.style.visibility = 'hidden';
     }
   });
   // Iteration 2: add/remove the class "crust-gluten-free" of `<section class="crust">`
